@@ -1,0 +1,285 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Jitin Nair
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[a4paper,11pt]{article}
+\usepackage{enumitem}
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+\usepackage{comment}
+%tabularx environment
+\usepackage{tabularx}
+%\usepackage{hyperref}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+%for publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%for social icons
+\usepackage{fontawesome5}
+
+%debug page outer frames
+%\usepackage{showframe}
+
+
+% job listing environments
+\newenvironment{jobshort}[2]
+    {
+    \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+    \end{tabularx}
+    }
+    {
+    }
+
+\newenvironment{joblong}[2]
+    {
+    \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+    \end{tabularx}
+    \begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
+    }
+    {
+    \end{itemize}
+    \end{minipage}    
+    }
+
+
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+% \begin{tabularx}{\linewidth}{ @{}X X@{} }
+% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
+% \raisebox{-0.05\height}\faGithub\ username \ | \
+% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
+% \end{tabularx}
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Leo Patrick Mulholland} \\[7.5pt]
+\href{https://github.com/LeoMul}{\raisebox{-0.05\height}\ GitHub: LeoMul}   \ $|$ \ \href{https://scholar.google.com/citations?user=at8xXbEAAAAJ\&hl=en}{Google Scholar: Leo Patrick Mulholland}\ $|$
+\href{mailto:lmulholland25@qub.ac.uk}{\raisebox{-0.05\height} \ lmulholland25@qub.ac.uk} \  
+\\ { +44 7709922037} \ $|$ \ 
+\href{https://www.linkedin.com/in/leo-patrick-mulholland-00aa52239/}{\raisebox{-0.05\height}\ LinkedIn: leo-patrick-mulholland-00aa52239}\\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+
+%Interests/ Keywords/ Summary
+%\section{Summary}
+
+\section{Research statement}
+
+%todo - look at candidate pdf cathy showed you on jobs website. also include mentoring other students, and autostructure specifically.
+
+I am interested in the signature of heavy atomic elements in spectroscopy. I am highly proficient in the computation of atomic structures, radiative rates,  collision strengths, photoionisation cross sections and recombination rate coefficients for heavy  elements, as well as collisional radiative modelling. This data is being produced for the modelling of kilonovae and other $r$-process sites, as well as experimental corroboration in laboratory plasmas. Alongside continuing extensive atomic calculations, I am additionally eager to expand into an interdisciplinary skill set by integrating the growing atomic data sets into large-scale radiative transfer modelling, in an effort to improve kilonova simulation and aid observational interpretation.
+
+\begin{comment}
+I am a PhD candidate in atomic astrophysics, specializing in atomic data generation for modelling of kilonovae. 
+
+My primary contribution to the wider astrophysical community is the calculation of atomic data for models that do not assume a Boltzmann level population. I have provided collision strengths for elements of particular interest to modellers, such as strontium and tellurium.  This work and the associated publications have had an impact of the community, where the data is beginning to be employed in other studies by the community. Recombination rates for $r$-proces elements have been produced, and are to be made publically available this year.
+
+During this PhD, I have aided in the development and maintenance of production level atomic codes. I have improved the angular algebra speed of the atomic code {\sc grasp}$^0$ by a factor of $\sim$ 4, and added an optional output flag of the atomic levels in a format that can be read by the {\sc jj2lsj} code of Gaigalas. The former has allowed for a faster turn around of structure models, and the latter has allowed more direct comparison with literature level designations. Combined with a systematic upgrade to arbitrary integer precision, these developments have allowed more efficient study of lanthanide ions using this code.
+
+On my GitHub, I host a variety of codes. Among them are open-source post processors for the atomic data codes {\sc autostructure}, {\sc grasp}$^0$ and {\sc darc}. The detailed level readers have allowed for the streamlined matching of atomic levels to those in the literature by directly comparing configuration strings and level purities. Additionally hosted is a code to match calibrated atomic levels and A-values between databases for the seemless comparison of radiative atomic data, particularly with those from the Kurucz database. A notable contribution is a post processing code for the process of resonant excitation, which calculates effective collision strengths from autoionization rates produced by {\sc autostructure}. This has allowed for the direct comparison between the independent resonance approximation and the $R$-matrix formalism for the heavy element neodymium.
+
+During my PhD, I have taken part in teaching assistance in each academic year. This has included grading of undergraduate homework, and the lone delivery of tutorials and computer classes in real analysis and classical mechanics. I additionally supervised a MSci student during my second year, whose work has directly contributed to a journal article in preparation. I was the PI on a successful grant for the {\sc dirac} computing clusters, aiming to produce atomic data for lanthanide ions.
+\end{comment}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education and Research}
+\begin{tabularx}{\linewidth}{@{}lX l@{}}	
+Oct 2023 - present & \href{https://www.qub.ac.uk/schools/SchoolofMathematicsandPhysics/Research/culture-environment/PhDResearchStudents/LeoMulholland-StudentProfile/}{PhD} (Physics)  & \textbf{Queen's University Belfast} \hfill  \\
+
+& \emph{Theoretical modelling of neutron star
+mergers: \newline Atomic Theory and Radiation
+Transport} & \\
+& Supervisors: C. Ballance, S. Sim and C. Ramsbottom & \\
+Jun 2022 - Sep 2022  & \href{https://uol.de/en/compphys/members}{Research intern} (Physics)  & \textbf{University of Oldenburg} \hfill  \\
+Sep 2019 - Jul 2023 & MSci (Theoretical Physics, first class honours) & \textbf{Queen's University Belfast} \\ 
+\end{tabularx}
+
+
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+
+\section{Teaching and Academic services}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+2024 - 2025 &  Supervision of the MSci thesis of Beth Campbell. This work has contributed directly to an in-preparation article in kilonova science.\\
+2024 - 2025 & Member of organising committee for astrophysics seminar series at QUB. \\
+2023 - present & Participation in outreach programmes such as 'Girls in Maths \& Physics' to aid diversity, equity and inclusion efforts within QUB.  \\
+2023 - present & Member of two organising committees  for  {\sc heavymetal} workshops. Including arrangement of  excursions and meals, discussion of scientific programmes and venues. I also acted as session chair on three occasions.\\
+2023 - present & Teaching assistant and tutor for classical mechanics (level 2), real analysis and linear algebra (level 1). These included lone delivery of tutorials, supervision of computer classes and management of an online help desk.\\
+2022 - present & Homework grading for undergraduate mathematics courses.
+\end{tabularx}
+
+\section{Technical Skills}
+
+I am experienced in the use of general atomic codes. During my PhD, I have published open-access collisional data using the {\sc darc} and Breit-Pauli R-matrix codes, as well as the {\sc autostructure} code. This required a working knowledge of high-performance computing and data analysis.
+
+I am adept in {\sc fortran} and {\sc python} programming. I have publicly available open-source codes for the analysis and streamlining of atomic computations. I have directly contributed to the maintenance and improvement of {\sc fortran} production-level atomic codes such as those in the {\sc darc} suite. On my GitHub I host open-source {\sc fortran} codes for processing resonant excitation calculations as well as {\sc python} codes for modelling spectra, calculating charge state balance with fast electrons, and various other utilities for open science. I have experience in the use of the Monte-Carlo Radiative Transfer code {\sc tardis}. I am also proficient in the memory-safe language {\sc rust}. Versed in C/C++, with an accreditation from Codecademy. Skilled in the use of OpenMP/MPI, as well as GPU acceleration -  for which I have an accreditation from NVIDIA.
+
+\section{Presentations}
+
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+September 2026 &  Invited  talk at BRIDGCE, University of Hertfordshire, England. ~ (\textbf{upcoming})\\
+January 2026 & Contributed talk at AtomicRadTran, LANL, USA.  \\
+June 2025 & Poster and flash talk at EAS, University College Cork, Ireland. \\ 
+May 2025 & Seminar at Auburn University, USA. \\ 
+July 2024 & Contributed talk at BRIDGCE, University of Surrey, England. \\
+September 2024 - present & Seminars in the internal ARC series at QUB, Northern Ireland. \\
+September 2023 - present & Contributed talks at all {\sc heavymetal} workshops.
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS
+%----------------------------------------------------------------------------------------
+\section{Publications}
+
+\textbf{Six} peer-reviewed open-access articles, five of which as first author (additional two in prep.). \textbf{Five} of these six are in kilonova science with a specialisation in atomic data production and modelling (\textbf{$\sim 40$} citations). Two further works as co-author are in review.
+
+\textbf{First Author Works}
+\begin{itemize}[label=,leftmargin=0.1cm]
+    	\item \textbf{L. P. Mulholland} et al. \href{https://doi.org/10.1093/mnras/stag237}{\emph{Electron impact excitation of Te {\sc iv} and {\sc v} and level resolved R-matrix photoionization of Te {\sc i} – {\sc iv} with application to modelling of AT2017gfo}}. MNRAS \textbf{546} (advance access) (2026).
+        \item \textbf{L. P. Mulholland} et al. \href{https://doi.org/10.1016/j.jqsrt.2025.109545}{\emph{On the use of the Axelrod formula for thermal electron collisions in astrophysical modelling}}. JQSRT \textbf{345} 109545 (2025).
+    	\item \textbf{L. P. Mulholland} et al. \href{https://doi.org/10.1093/mnras/stae2331}{\emph{Collisional and radiative data for tellurium ions in kilonovae modelling and laboratory benchmarks}}. MNRAS \textbf{534} 3423–3438 (2024).
+	\item \textbf{L. P. Mulholland} et al. \href{https://academic.oup.com/mnras/article/532/2/2289/7702447}{\emph{New radiative and collisional atomic data for Sr {\sc ii} and Y {\sc ii} with application to kilonova modelling}}. MNRAS \textbf{532} 2289-2308 (2024).
+    
+	\item \textbf{L. P. Mulholland} et al. \href{https://iopscience.iop.org/article/10.1088/1367-2630/ad0991/meta}{\emph{Non-analytic behaviour in large-deviations of the susceptible-infected-recovered model under the influence of lockdowns}}. New J. Phys. \textbf{25} 13034 (2023).
+
+\end{itemize}
+
+\textbf{Coauthored works}
+\begin{itemize}[label=,leftmargin=0.1cm]
+    	\item {M. McCann}, \textbf{ L. P. Mulholland} et al. . \href{https://doi.org/10.1093/mnras/stae2331}{\emph{Luminosity predictions for the first three ionization stages of W, Pt, and Au to probe potential sources of emission in kilonova}}. MNRAS \textbf{538} 537-552 (2025).
+        
+        \item {S. A. Sim} et al. (\textbf{inc L. P. Mulholland}). \href{https://doi.org/10.1093/mnras/stag1384}{\emph{Late-time emission-line profiles from kilonova models}}. MNRAS \textbf{551} (advance access) (2026).
+        \item {N. Ferguson}, \textbf{L. P. Mulholland}  et al.. \href{https://academic.oup.com/mnras/advance-article/doi/10.1093/mnras/stag1586/8767110}{\emph{Excitation and Recombination Data for Nd I–V with Applications to Kilonovae}}. MNRAS, accepted.
+\end{itemize}
+\textbf{In preparation}
+\begin{itemize}[label=,leftmargin=0.1cm]
+    	\item \textbf{L. P. Mulholland} et al. \href{}{\emph{Ce II-IV emission in kilonova with R-matrix collision strengths and
+distorted wave recombination rates}}. In preparation.
+    	\item \textbf{L. P. Mulholland} et al. \href{}{\emph{Nebular kilonova emission: implications of first $r$-process peak
+abundances from atomic and nuclear calculations}}. In preparation.
+\end{itemize}
+
+
+\section{Grants and awards}
+
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+2026 & O'Sullivan Masterclass. Royal Irish Academy. Awarded every year to one student from each institution on the island of Ireland.\\
+2025 - 2027 & STFC computing grant on DiRAC. Led proposal and science case. 4.21 Mcpuh, 0.49 Mgpuh awarded over two years. \\
+
+2023  & Earnshaw Award. Awarded to the top undergraduate thesis each year by the Institute of Physics (Ireland). \\
+2019 - 2023 & Four undergraduate prizes awarded by QUB, including the Bates prize.
+\end{tabularx}
+
+\input{references.tex}
+
+
+%\begin{comment}
+
+
+%\end{comment}
+%\section{Additional Experience}
+%\begin{jobshort}{DAAD RISE Intern}{June 2022 to September 2022 } 
+%During this program, I developed in {\sc rust} a threaded code for the study of large deviations on disease networks with lockdowns. This code is publicly hosted on Github. The collaboration with Dr. Yannick Feld and Prof. Alex Hartmann continued remotely during my masters year until around September 2023,  resulting in a publication in the New Journal of Physics.
+%\end{jobshort}
+
+\vfill
+
+\end{document}
